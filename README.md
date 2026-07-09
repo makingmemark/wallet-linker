@@ -51,11 +51,12 @@ The results page includes links for:
 
 ## Install locally
 
-1. Open `chrome://extensions`.
-2. Turn on **Developer mode**.
-3. Click **Load unpacked**.
-4. Select this folder: `wallet-linker-extension`.
-5. Paste a bare `0x...` address into the address bar and press Enter.
+1. Download .zip folder from Releases in sidebar and unzip (or download repo)
+2. Open `chrome://extensions`.
+3. Turn on **Developer mode**.
+4. Click **Load unpacked**.
+5. Select the unzipped folder: `wallet-linker-extension`.
+6. Paste a bare `0x...` address into the address bar and press Enter.
 
 ## Permissions
 
