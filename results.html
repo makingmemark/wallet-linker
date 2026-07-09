@@ -58,7 +58,7 @@
     <section class="note">
       <strong>OpenSea API:</strong> the extension tries to resolve the collection slug from OpenSea’s contract endpoint.
       On first use it creates a free-tier OpenSea API key and stores it locally in Chrome extension storage.
-      If OpenSea does not return a collection slug, the search/account/asset links still appear.
+      If OpenSea does not return a collection slug, the account/asset links still appear. The extension no longer creates OpenSea search URLs because those can redirect to an unintended collection.
     </section>
   </main>
 

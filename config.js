@@ -19,10 +19,6 @@ window.LINK_TEMPLATES = [
     url: 'https://opensea.io/assets/{chain}/{address}/{tokenId}'
   },
   {
-    label: 'OpenSea search',
-    url: 'https://opensea.io/search?query={address}'
-  },
-  {
     label: 'OpenSea wallet/account',
     url: 'https://opensea.io/{address}'
   },

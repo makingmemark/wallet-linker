@@ -1,5 +1,7 @@
 # Wallet Linker Chrome Extension
 
+Current version: `0.3.1`.
+
 Paste a bare EVM wallet/contract address into Chrome's address bar and press Enter.
 
 Example:
@@ -45,7 +47,6 @@ The results page includes links for:
 - EVM Now
 - OpenSea collection, resolved dynamically through OpenSea's API when available
 - OpenSea asset token
-- OpenSea search
 - OpenSea wallet/account
 - Onchain Checker
 
@@ -87,7 +88,9 @@ GET https://api.opensea.io/api/v2/chain/{chain}/contract/{address}
 
 with the `x-api-key` header, and tries to extract the OpenSea collection slug from the response.
 
-If OpenSea does not return a collection slug, or the API lookup fails/rate-limits, the extension still shows the non-slug links such as OpenSea search, OpenSea asset, Etherscan, EVM Now, and Onchain Checker.
+If OpenSea does not return a collection slug, or the API lookup fails/rate-limits, the extension still shows the non-slug links such as OpenSea asset, OpenSea wallet/account, Etherscan, EVM Now, and Onchain Checker.
+
+The extension deliberately does **not** generate an `opensea.io/search?query=...` link, because OpenSea search URLs can redirect to an unintended collection instead of showing a neutral search result page.
 
 Free-tier OpenSea keys expire, so the extension automatically requests a fresh key if the stored one is expired or rejected.
 

@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Wallet Linker",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Paste a bare 0x EVM wallet/contract address into Chrome's address bar, or use wa + Space/Tab, to open useful wallet/collection links.",
   "omnibox": {
     "keyword": "wa"
