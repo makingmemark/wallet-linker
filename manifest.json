@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Wallet Linker",
+  "version": "0.3.0",
+  "description": "Paste a bare 0x EVM wallet/contract address into Chrome's address bar, or use wa + Space/Tab, to open useful wallet/collection links.",
+  "omnibox": {
+    "keyword": "wa"
+  },
+  "permissions": [
+    "storage",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "https://api.opensea.io/*",
+    "https://www.google.com/*",
+    "https://www.google.com.au/*",
+    "https://www.google.co.nz/*",
+    "https://www.google.co.uk/*",
+    "https://duckduckgo.com/*",
+    "https://www.bing.com/*",
+    "https://search.brave.com/*",
+    "https://search.yahoo.com/*",
+    "https://www.ecosia.org/*",
+    "https://www.startpage.com/*",
+    "https://kagi.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Wallet Linker",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

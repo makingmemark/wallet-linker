@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wallet Linker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="header">
+      <div>
+        <p class="eyebrow">Wallet Linker</p>
+        <h1>EVM address links</h1>
+      </div>
+      <button id="copy-all" type="button">Copy all</button>
+    </header>
+
+    <section class="card">
+      <label for="address">Address</label>
+      <div class="input-row">
+        <input id="address" spellcheck="false" autocomplete="off" placeholder="0x…" />
+        <button id="refresh" type="button">Generate</button>
+      </div>
+      <div class="meta-row meta-row-wide">
+        <label for="chain">Chain</label>
+        <select id="chain">
+          <option value="ethereum">Ethereum</option>
+          <option value="base">Base</option>
+          <option value="zora">Zora</option>
+          <option value="arbitrum">Arbitrum</option>
+          <option value="optimism">Optimism</option>
+          <option value="polygon">Polygon</option>
+          <option value="blast">Blast</option>
+          <option value="avalanche">Avalanche</option>
+          <option value="ape_chain">ApeChain</option>
+          <option value="abstract">Abstract</option>
+          <option value="unichain">Unichain</option>
+          <option value="shape">Shape</option>
+          <option value="soneium">Soneium</option>
+          <option value="ronin">Ronin</option>
+          <option value="bera_chain">Berachain</option>
+          <option value="hyperevm">HyperEVM</option>
+          <option value="monad">Monad</option>
+          <option value="megaeth">MegaETH</option>
+        </select>
+        <label for="token-id">Token ID</label>
+        <input id="token-id" spellcheck="false" autocomplete="off" inputmode="numeric" />
+      </div>
+      <p id="status" class="status" role="status"></p>
+    </section>
+
+    <section class="card">
+      <h2>Links</h2>
+      <div id="links" class="links"></div>
+    </section>
+
+    <section class="note">
+      <strong>OpenSea API:</strong> the extension tries to resolve the collection slug from OpenSea’s contract endpoint.
+      On first use it creates a free-tier OpenSea API key and stores it locally in Chrome extension storage.
+      If OpenSea does not return a collection slug, the search/account/asset links still appear.
+    </section>
+  </main>
+
+  <template id="link-row-template">
+    <article class="link-row">
+      <div>
+        <h3></h3>
+        <a target="_blank" rel="noopener noreferrer"></a>
+      </div>
+      <button type="button">Copy</button>
+    </article>
+  </template>
+
+  <script src="config.js"></script>
+  <script src="results.js"></script>
+</body>
+</html>

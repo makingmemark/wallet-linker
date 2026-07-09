@@ -1,0 +1,217 @@
+:root {
+  color-scheme: dark;
+  --bg: #08090d;
+  --card: #12141d;
+  --card-2: #171a25;
+  --border: #2b3142;
+  --text: #f6f8fb;
+  --muted: #9aa4b5;
+  --accent: #7dd3fc;
+  --accent-2: #a78bfa;
+  --danger: #fca5a5;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(125, 211, 252, 0.18), transparent 34rem),
+    radial-gradient(circle at bottom right, rgba(167, 139, 250, 0.16), transparent 30rem),
+    var(--bg);
+  color: var(--text);
+}
+
+.shell {
+  width: min(980px, calc(100vw - 32px));
+  margin: 0 auto;
+  padding: 48px 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+h1, h2, h3, p { margin-top: 0; }
+h1 { margin-bottom: 0; font-size: clamp(32px, 5vw, 56px); line-height: 0.95; }
+h2 { margin-bottom: 16px; font-size: 18px; }
+h3 { margin: 0 0 6px; font-size: 14px; color: var(--muted); }
+
+.card, .note {
+  background: rgba(18, 20, 29, 0.82);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.26);
+  backdrop-filter: blur(12px);
+}
+
+.note {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.input-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+}
+
+.meta-row {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 80px 140px;
+  gap: 10px;
+  align-items: center;
+}
+
+.meta-row label { margin-bottom: 0; }
+
+input {
+  width: 100%;
+  appearance: none;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--card-2);
+  color: var(--text);
+  padding: 12px 14px;
+  font: inherit;
+  outline: none;
+}
+
+input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(125, 211, 252, 0.16);
+}
+
+button {
+  appearance: none;
+  border: 1px solid rgba(125, 211, 252, 0.45);
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(125, 211, 252, 0.18), rgba(167, 139, 250, 0.18));
+  color: var(--text);
+  padding: 10px 14px;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+button:hover { border-color: var(--accent); }
+
+.status {
+  min-height: 22px;
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.links {
+  display: grid;
+  gap: 10px;
+}
+
+.link-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  padding: 14px;
+  background: rgba(23, 26, 37, 0.72);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.link-row a {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.link-row a:hover { text-decoration: underline; }
+
+code {
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2px 6px;
+  color: var(--accent);
+}
+
+.popup-body {
+  min-height: auto;
+  width: 320px;
+  background: var(--bg);
+}
+
+.popup {
+  padding: 16px;
+}
+
+.popup h1 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.popup p {
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.popup button {
+  width: 100%;
+  margin-top: 8px;
+}
+
+select {
+  width: 100%;
+  appearance: none;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--card-2);
+  color: var(--text);
+  padding: 12px 14px;
+  font: inherit;
+  outline: none;
+}
+
+select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(125, 211, 252, 0.16);
+}
+
+.meta-row-wide {
+  grid-template-columns: 80px minmax(140px, 220px) 80px 140px;
+}
+
+@media (max-width: 720px) {
+  .meta-row-wide {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+}
